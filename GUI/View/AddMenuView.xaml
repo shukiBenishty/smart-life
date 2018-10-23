@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="GUI.View.AddMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI.View"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+	         VerticalAlignment="Stretch"
+	         HorizontalContentAlignment="Stretch"
+	         VerticalContentAlignment="Stretch"
+             Height="auto"
+             Width="auto"
+             >
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin"  Value="5,10,5,10"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Height" Value="Auto"/>
+        </Style>
+    </UserControl.Resources>
+
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+        <Button Content="Home" Command="{Binding OpenHomeCommand}"/>
+        <Button Content="Add Food"  Command="{Binding AddFoodCommand}" />
+        <Button Content="Add Exercise" Command="{Binding AddExerciseCommand}" />
+        <Button Content="Add Biometrc" Command="{Binding AddBiometrcCommand}" />
+
+    </StackPanel>
+</UserControl>

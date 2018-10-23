@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="GUI.View.AddFoodItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI.View"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch"
+	         VerticalAlignment="Stretch"
+	         HorizontalContentAlignment="Stretch"
+	         VerticalContentAlignment="Stretch"
+             Height="auto"
+             Width="auto">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!--<local:FoodNutrChartView HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Column="0"   />-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition  Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical">
+            <Label Content="Calories:"/>
+            <Label Content="{Binding Food.NfCalories}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Label Content="Total Fat:"/>
+            <Label Content="{Binding Food.NfTotalFat}"/>
+        </StackPanel>
+        <StackPanel  Grid.Row="2" Orientation="Vertical">
+            <Label Content="Sugars:"/>
+            <Label Content="{Binding Food.NfSugars}"/>
+        </StackPanel>
+        <StackPanel  Grid.Row="2" Orientation="Vertical">
+            <Label Content="Sugars:"/>
+            <Label Content="{Binding Food.NfSugars}"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Label Content="Serving unit" />
+                <TextBlock Text="{Binding Food.ServingUnit}"/>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="5">
+                <Label Content="Serving weight grams" />
+                <TextBlock Text="{Binding Food.ServingWeightGrams}" Margin="5,0,5,5"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" >
+                <Label Content="Quantity" />
+                <TextBox Text="{Binding Quantity}"/>
+            </StackPanel>
+            <Button Content="Add" Command="{Binding AddFoodCommand}" Grid.Row="4" Margin="5"/>
+
+        </Grid>
+    </Grid>
+</UserControl>
